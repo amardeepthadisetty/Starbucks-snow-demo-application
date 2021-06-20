@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description>order form should not editable, once closed</description>
+        <field>active</field>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>On load order form</name>
+        <order/>
+        <script><![CDATA[function onLoad() {
+    //Type appropriate comment here, and begin script below
+    var stateValue = g_form.getValue('state');
+
+//     if (stateValue === "3" || stateValue === "4" || stateValue === "7") {
+//         //alert(stateValue);
+//         g_form.setReadOnly('number', true);
+//         g_form.setReadOnly('order_for', true);
+//         g_form.setReadOnly('state', true);
+//         g_form.setReadOnly('short_description', true);
+//         g_form.setReadOnly('assignment_group', true);
+//         g_form.setReadOnly('assigned_to', true);
+//         if (g_user.hasRole('x_472660_starbucks.starbucks_barista')) {
+//             alert("user has barista role");
+//             g_form.setReadOnly('number', false);
+//             g_form.setReadOnly('order_for', false);
+//             g_form.setReadOnly('state', false);
+//             g_form.setReadOnly('short_description', false);
+//             g_form.setReadOnly('assignment_group', false);
+//             g_form.setReadOnly('assigned_to', false);
+//         }
+//     }
+
+    if (g_form.isNewRecord()) {
+        var sysID = g_user.userID;
+        g_form.setValue('order_for', sysID);
+		
+		var baristaGroupId = 'a2ee6eee2f3820102b117f572799b673';
+        //load the assignment group
+        g_form.setValue('assignment_group', baristaGroupId.toString());
+    }
+	
+	
+
+}]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-04 01:38:47</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>bc31603e2f7c20102b117f572799b686</sys_id>
+        <sys_mod_count>24</sys_mod_count>
+        <sys_name>On load order form</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Starbucks Management" source="x_472660_starbucks">4bae516a2f7420102b117f572799b67c</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Starbucks Management">4bae516a2f7420102b117f572799b67c</sys_scope>
+        <sys_update_name>sys_script_client_bc31603e2f7c20102b117f572799b686</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-12-05 01:35:23</sys_updated_on>
+        <table>x_472660_starbucks_starbucks_order</table>
+        <type>onLoad</type>
+        <ui_type>0</ui_type>
+        <view/>
+    </sys_script_client>
+</record_update>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_app_application">
+    <sys_app_application action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <category display_value="">Custom Applications</category>
+        <description>this is an app for managing start bucks</description>
+        <device_type>browser</device_type>
+        <hint>this is an app for managing start bucks</hint>
+        <name/>
+        <order/>
+        <roles>x_472660_starbucks.starbucks_barista,x_472660_starbucks.starbucks_user</roles>
+        <sys_class_name>sys_app_application</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-03 11:31:06</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>6dcfd16a2f7420102b117f572799b609</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name>Starbucks Management</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Starbucks Management" source="x_472660_starbucks">4bae516a2f7420102b117f572799b67c</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Starbucks Management">4bae516a2f7420102b117f572799b67c</sys_scope>
+        <sys_update_name>sys_app_application_6dcfd16a2f7420102b117f572799b609</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-12-04 08:08:54</sys_updated_on>
+        <title>Starbucks Management</title>
+        <view_name/>
+    </sys_app_application>
+</record_update>

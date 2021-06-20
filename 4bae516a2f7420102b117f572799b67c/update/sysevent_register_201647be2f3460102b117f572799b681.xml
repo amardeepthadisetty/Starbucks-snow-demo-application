@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sysevent_register">
+    <sysevent_register action="INSERT_OR_UPDATE">
+        <caller_access/>
+        <description>7be9a0b22fbc20102b117f572799b60b, 8818a0722fbc20102b117f572799b647, 7c3a68b22fbc20102b117f572799b621</description>
+        <event_name>x_472660_starbucks.starBucks.order.place</event_name>
+        <fired_by>UI Action ( Order Grande, Order tall, Order venti)</fired_by>
+        <queue/>
+        <suffix>starBucks.order.placed</suffix>
+        <sys_class_name>sysevent_register</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-04 13:40:24</sys_created_on>
+        <sys_id>201647be2f3460102b117f572799b681</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_472660_starbucks.starBucks.order.place</sys_name>
+        <sys_package display_value="Starbucks Management" source="x_472660_starbucks">4bae516a2f7420102b117f572799b67c</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Starbucks Management">4bae516a2f7420102b117f572799b67c</sys_scope>
+        <sys_update_name>sysevent_register_201647be2f3460102b117f572799b681</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-12-04 13:40:24</sys_updated_on>
+        <table>x_472660_starbucks_startbucks_drink</table>
+    </sysevent_register>
+</record_update>

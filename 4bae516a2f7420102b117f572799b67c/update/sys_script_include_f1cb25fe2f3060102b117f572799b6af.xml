@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_472660_starbucks.starBucksDrinkUtils</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>starBucksDrinkUtils</name>
+        <script><![CDATA[var starBucksDrinkUtils = Class.create();
+starBucksDrinkUtils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+
+    getAssignedToUser: function(assignmentGroupID) {
+        //var assignmentGroupID = "a2ee6eee2f3820102b117f572799b673";
+        var membersArray = [];
+        var gr = new GlideRecord("sys_user_grmember");
+        gr.addQuery("group.sys_id", assignmentGroupID);
+        gr.query();
+        while (gr.next()) {
+            var member = {};
+            member.sysId = gr.user.sys_id.toString();
+            member.name = gr.user.getDisplayValue();
+            membersArray.push(member);
+        }
+
+        //gs.info("members array length " + membersArray.length);
+        var memArrayLength = parseInt(membersArray.length);
+
+        var randomNumber = Math.floor(Math.random() * memArrayLength);
+
+        return membersArray[randomNumber].sysId;
+        //gs.info("data is: " + membersArray[randomNumber].name);
+
+    },
+
+    type: 'starBucksDrinkUtils'
+});]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-04 07:13:29</sys_created_on>
+        <sys_id>f1cb25fe2f3060102b117f572799b6af</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>starBucksDrinkUtils</sys_name>
+        <sys_package display_value="Starbucks Management" source="x_472660_starbucks">4bae516a2f7420102b117f572799b67c</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Starbucks Management">4bae516a2f7420102b117f572799b67c</sys_scope>
+        <sys_update_name>sys_script_include_f1cb25fe2f3060102b117f572799b6af</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-12-05 01:15:23</sys_updated_on>
+    </sys_script_include>
+</record_update>
