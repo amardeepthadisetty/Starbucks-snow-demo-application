@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_ui_module">
+    <sys_ui_module action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <application display_value="Star bucks order">e2d765222fb420102b117f572799b68c</application>
+        <filter/>
+        <name>Starbucks Orders</name>
+        <order/>
+        <path/>
+        <path_relative_to_root>false</path_relative_to_root>
+        <roles>x_472660_starbucks.starbucks_user</roles>
+        <sys_class_name>sys_ui_module</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-03 12:06:24</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>2ed765222fb420102b117f572799b68e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Starbucks Orders</sys_name>
+        <sys_package display_value="Starbucks Management" source="x_472660_starbucks">4bae516a2f7420102b117f572799b67c</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Starbucks Management">4bae516a2f7420102b117f572799b67c</sys_scope>
+        <sys_update_name>sys_ui_module_2ed765222fb420102b117f572799b68e</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-12-03 12:06:24</sys_updated_on>
+        <table>x_472660_starbucks_starbucks_order</table>
+        <uncancelable>false</uncancelable>
+        <view_name/>
+    </sys_ui_module>
+</record_update>

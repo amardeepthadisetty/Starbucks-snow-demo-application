@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_ui_action">
+    <sys_ui_action action="INSERT_OR_UPDATE">
+        <action_name>create_order_tall</action_name>
+        <active>true</active>
+        <client>true</client>
+        <client_script_v2><![CDATA[function onClick(g_form) {
+
+}]]></client_script_v2>
+        <comments/>
+        <condition>!current.isNewRecord()</condition>
+        <form_action>true</form_action>
+        <form_button>true</form_button>
+        <form_button_v2>false</form_button_v2>
+        <form_context_menu>false</form_context_menu>
+        <form_link>false</form_link>
+        <form_menu_button_v2>false</form_menu_button_v2>
+        <form_style/>
+        <hint/>
+        <isolate_script>true</isolate_script>
+        <list_action>false</list_action>
+        <list_banner_button>false</list_banner_button>
+        <list_button>false</list_button>
+        <list_choice>false</list_choice>
+        <list_context_menu>false</list_context_menu>
+        <list_link>false</list_link>
+        <list_save_with_form_button>false</list_save_with_form_button>
+        <list_style/>
+        <messages/>
+        <name>Order Tall</name>
+        <onclick>orderTall()</onclick>
+        <order>200</order>
+        <script><![CDATA[function orderTall() {
+    alert("You are ordering Tall");
+    gsftSubmit(null, g_form.getFormElement(), 'create_order_tall');
+}
+
+if (typeof window == 'undefined')
+    create_order_tall_server();
+
+function create_order_tall_server() {
+    //current.update();
+    var ord = new GlideRecord("x_472660_starbucks_starbucks_order");
+    ord.initialize();
+    var vinayID = "3D3a5d2eae2f3820102b117f572799b659";
+    var orderFor = gs.getUserID();
+    ord.order_for = orderFor.toString();
+    ord.state = "1";
+    ord.assignment_group = "a2ee6eee2f3820102b117f572799b673"; //barista
+	
+	var starBucksUtils = new starBucksDrinkUtils();
+	var returnedData = starBucksUtils.getAssignedToUser( ord.assignment_group );
+	
+    ord.assigned_to = returnedData.toString(); //this is vinay varma
+    var orderSysId = ord.insert();
+    gs.info("sysId" + orderSysId);
+
+    var m2mTable = new GlideRecord("x_472660_starbucks_m2m_starbucks_dr_starbucks_or");
+    m2mTable.initialize();
+    //m2mTable.size = '2';
+	m2mTable.setValue('size', '2');
+    m2mTable.starbucks_drink = current.sys_id;
+    m2mTable.starbucks_order = orderSysId;
+    m2mTable.insert();
+	
+	gs.eventQueue('x_472660_starbucks.starBucks.order.place',m2mTable,gs.getUserID(),gs.getUserName());
+
+
+    action.setRedirectURL(ord);
+}]]></script>
+        <show_insert>true</show_insert>
+        <show_multiple_update>false</show_multiple_update>
+        <show_query>false</show_query>
+        <show_update>true</show_update>
+        <sys_class_name>sys_ui_action</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-04 02:12:30</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>8818a0722fbc20102b117f572799b647</sys_id>
+        <sys_mod_count>13</sys_mod_count>
+        <sys_name>Order Tall</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Starbucks Management" source="x_472660_starbucks">4bae516a2f7420102b117f572799b67c</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Starbucks Management">4bae516a2f7420102b117f572799b67c</sys_scope>
+        <sys_update_name>sys_ui_action_8818a0722fbc20102b117f572799b647</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-12-05 14:56:52</sys_updated_on>
+        <table>x_472660_starbucks_startbucks_drink</table>
+        <ui11_compatible>true</ui11_compatible>
+        <ui16_compatible>false</ui16_compatible>
+    </sys_ui_action>
+</record_update>
